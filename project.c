@@ -37,17 +37,19 @@ int main(){
     }
     else{
       printf("this round is a draw\n");
-     
     }
-    if(countc==2){                         
+   
+    }
+    if(countc>countp){                         
       printf("hard luck you lost\n");
+      
     }
-    if (countp==2){
+    else if (countp>countc){
       printf("yay you won \n");
     }
+    else{
+      printf("it's a tie");
     }
-
-
   return 0;
 }
 int game(char comp,char player){         //function definition computer selecting a character 
