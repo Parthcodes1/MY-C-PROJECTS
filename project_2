@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int number;
+    int guessnumber = 0;//variable to check if won in 5 tries
+    srand(time(0)); // Seed random number generator
+    number = (rand() % 100) / 10 + 1; // Generate random number between 1 and 10
+    int count = 0;
+
+    for (int i = 1; i <= 5; i++) { // Allow up to 5 guesses
+        int guess;
+        printf("guess the number between 1 to 10: ");
+        scanf("%d", &guess);
+
+        if (guess > number) { // Guess is too high
+            printf("go lower\n");
+            count++;
+        } else if (guess < number) { // Guess is too low
+            printf("go higher\n");
+            count++;
+        } else { // Guess is correct
+            printf("you did it in %d tries\n", count);
+            guessnumber++;//increase guessnumber by one
+            break;//exit out of loop
+        }
+    }
+
+    if (guessnumber != 1) { // Number was not guessed in 5 tries
+        printf("you exceeded the number of tries\n");
+        printf("the number was %d", number);
+    }
+
+    return 0;
+}
