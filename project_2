@@ -6,7 +6,7 @@ int main() {
     int number;
     int guessnumber = 0;//variable to check if won in 5 tries
     srand(time(0)); // Seed random number generator
-    number = (rand() % 100) / 10 + 1; // Generate random number between 1 and 10
+    number = rand() % 10  + 1; // Generate random number between 1 and 10
     int count = 0;
 
     for (int i = 1; i <= 5; i++) { // Allow up to 5 guesses
